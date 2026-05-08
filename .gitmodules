@@ -1,0 +1,3 @@
+[submodule "akos"]
+	path = akos
+	url = https://github.com/the-ak-foundation/akos

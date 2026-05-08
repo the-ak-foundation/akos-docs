@@ -1,0 +1,11 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{latex_nosplit_code}[2026/02/10 Keep Doxygen code blocks together when possible]
+
+\RequirePackage{etoolbox}
+\RequirePackage{needspace}
+
+% Reserve vertical room before code-like blocks so short blocks move together
+% to the next page instead of splitting across a page break.
+\pretocmd{\DoxyCode}{\Needspace{10\baselineskip}}{}{}
+\pretocmd{\DoxyCodeInclude}{\Needspace{10\baselineskip}}{}{}
+\pretocmd{\DoxyVerb}{\Needspace{8\baselineskip}}{}{}

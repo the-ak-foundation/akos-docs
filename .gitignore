@@ -1,0 +1,9 @@
+# Generated documentation output
+/out/
+/scripts/__pycache__/
+
+# Editor and OS clutter
+.DS_Store
+Thumbs.db
+*.swp
+*~

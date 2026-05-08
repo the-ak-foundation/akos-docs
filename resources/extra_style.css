@@ -1,0 +1,191 @@
+/* Selected/active color theme */
+:root {
+    --ak-accent: #169451;
+    --ak-accent-weak: rgba(14, 165, 164, 0.22);
+    --primary-color: var(--ak-accent) !important;
+    --primary-dark-color: #0f7b42 !important;
+    --primary-light-color: #3ab977 !important;
+    --link-color: var(--ak-accent) !important;
+}
+
+html.dark-mode {
+    --primary-color: var(--ak-accent) !important;
+    --primary-dark-color: #0f7b42 !important;
+    --primary-light-color: #3ab977 !important;
+    --link-color: var(--ak-accent) !important;
+    --ak-accent-weak: rgba(14, 165, 164, 0.35);
+}
+
+/* Native text selection */
+::selection {
+    background: var(--ak-accent);
+    color: #ffffff;
+}
+
+/* Doxygen-awesome selected menu/tab backgrounds */
+:root,
+html.dark-mode {
+    --menu-selected-background: var(--ak-accent-weak);
+}
+
+/* Left nav selected item */
+#nav-tree .selected,
+#nav-tree .selected a {
+    color: var(--ak-accent) !important;
+}
+
+#nav-tree .selected::after {
+    background: var(--ak-accent) !important;
+}
+
+/* Top tab active state */
+.tablist li.current,
+.tablist li.current a {
+    color: var(--ak-accent) !important;
+}
+
+/* Replace default static logo img with theme-aware logo. */
+#projectlogo img {
+    display: none !important;
+}
+
+#projectlogo::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background-image: url("ak_logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+html.dark-mode #projectlogo::before {
+    background-image: url("ak_logo.png");
+}
+
+html.light-mode #projectlogo::before {
+    background-image: url("ak_logo.png");
+}
+
+/* Let header row expand with a larger logo. */
+/* #titlearea #projectrow,
+#titlearea tr {
+    height: 200px !important;
+} */
+
+/* Hide nav-sync icon but keep sync forced on via JS. */
+#nav-sync {
+    display: none !important;
+}
+
+/* Hide the root nav tree label so the sidebar starts with the actual pages. */
+#nav-tree-contents > ul > li:first-child > .item > .label {
+    display: none !important;
+}
+
+/* Sidebar nav tree controls */
+#nav-tree-controls {
+    display: flex;
+    gap: 8px;
+    padding: 8px 10px 6px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--side-nav-background);
+}
+
+.nav-tree-control-btn {
+    border: 1px solid var(--ak-accent);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--link-color);
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 4px 8px;
+}
+
+.nav-tree-control-btn:hover {
+    background: var(--ak-accent-weak);
+}
+
+/* Page-level next button block used in markdown pages */
+.section_buttons {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    grid-template-areas:
+        "prev-label next-label"
+        "prev-link next-link";
+    column-gap: 18px;
+    row-gap: 8px;
+    align-items: start;
+}
+
+.section_buttons .next-label,
+.section_buttons .prev-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted, #666);
+    margin: 0;
+}
+
+.section_buttons .prev-label {
+    grid-area: prev-label;
+    text-align: left;
+    line-height: 1;
+}
+
+.section_buttons .next-label {
+    grid-area: next-label;
+    text-align: right;
+    line-height: 1;
+}
+
+.section_buttons .next-link,
+.section_buttons .prev-link {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--ak-accent);
+    background: var(--ak-accent-weak);
+    color: var(--link-color) !important;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    width: fit-content;
+    max-width: 100%;
+    transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.section_buttons .prev-link {
+    grid-area: prev-link;
+    justify-self: start;
+    align-self: start;
+}
+
+.section_buttons .next-link {
+    grid-area: next-link;
+    justify-self: end;
+    align-self: start;
+}
+
+.section_buttons .next-link:hover,
+.section_buttons .prev-link:hover {
+    background: rgba(22, 148, 81, 0.28);
+    transform: translateY(-1px);
+}
+
+/* Force section/page outline active links to AK green */
+div.toc li a:hover,
+div.toc li a.active,
+div.contents .toc a,
+div.contents .toc a.active,
+#page-nav ul.page-outline li a:hover,
+#page-nav ul.page-outline li a.active {
+    color: var(--ak-accent) !important;
+}
