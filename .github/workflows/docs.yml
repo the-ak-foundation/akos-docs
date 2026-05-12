@@ -17,12 +17,28 @@ concurrency:
 
 jobs:
   build:
-    runs-on: [self-hosted, linux, x64]
+    runs-on: ubuntu-latest
     steps:
+      - name: Install Doxygen 1.14.0
+        run: |
+          curl -L --fail --show-error \
+            https://github.com/doxygen/doxygen/releases/download/Release_1_14_0/doxygen-1.14.0.linux.bin.tar.gz \
+            -o /tmp/doxygen-1.14.0.linux.bin.tar.gz
+          tar -xzf /tmp/doxygen-1.14.0.linux.bin.tar.gz -C /tmp
+          sudo cp /tmp/doxygen-1.14.0/bin/doxygen /usr/local/bin/doxygen
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz make perl python3 texlive-latex-base texlive-latex-extra
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
+
+      - name: Verify Doxygen version
+        run: doxygen --version
 
       - name: Build docs
         run: ./build_docs.sh
@@ -42,7 +58,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: [self-hosted, linux, x64]
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

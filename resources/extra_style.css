@@ -80,35 +80,9 @@ html.light-mode #projectlogo::before {
     display: none !important;
 }
 
-/* Hide the root nav tree label so the sidebar starts with the actual pages. */
-#nav-tree-contents > ul > li:first-child > .item > .label {
+/* Hide the root nav tree item entirely so the hidden mainpage cannot stay selected. */
+#nav-tree-contents > ul > li:first-child > .item {
     display: none !important;
-}
-
-/* Sidebar nav tree controls */
-#nav-tree-controls {
-    display: flex;
-    gap: 8px;
-    padding: 8px 10px 6px 10px;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    background: var(--side-nav-background);
-}
-
-.nav-tree-control-btn {
-    border: 1px solid var(--ak-accent);
-    border-radius: 6px;
-    background: transparent;
-    color: var(--link-color);
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 1.2;
-    padding: 4px 8px;
-}
-
-.nav-tree-control-btn:hover {
-    background: var(--ak-accent-weak);
 }
 
 /* Page-level next button block used in markdown pages */

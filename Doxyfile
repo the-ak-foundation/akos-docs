@@ -1,7 +1,7 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "AKOS"
 PROJECT_NUMBER         = v1.0.0
-PROJECT_BRIEF          = "AKOS Documentation"
+PROJECT_BRIEF          = "Documentation"
 PROJECT_LOGO           = resources/ak_logo.png
 OUTPUT_DIRECTORY       = out
 CREATE_SUBDIRS         = NO
@@ -169,6 +169,7 @@ FILE_PATTERNS          = *.ld \
                          *.ice
 RECURSIVE              = YES
 EXCLUDE                = akos/examples \
+                         akos/README.md \
                          akos/port/arm/cortex-m3/core_cm3.h \
                          akos/port/arm/cortex-m3/core_cmFunc.h \
                          akos/port/arm/cortex-m3/core_cmInstr.h
@@ -214,7 +215,6 @@ HTML_EXTRA_FILES       = doxygen/awesome_doxygen/doxygen-awesome-darkmode-toggle
                          doxygen/awesome_doxygen/doxygen-awesome-paragraph-link.js \
                          doxygen/awesome_doxygen/doxygen-awesome-interactive-toc.js \
                          doxygen/awesome_doxygen/doxygen-awesome-nav-sync.js \
-                         doxygen/awesome_doxygen/doxygen-awesome-nav-tree-controls.js \
                          resources/downloads/stm32l151_fore_background.zip
 HTML_COPY_CLIPBOARD    = NO
 HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
