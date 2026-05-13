@@ -39,6 +39,7 @@ for f in \
   "$ROOT_DIR/doxygen/awesome_doxygen/doxygen-awesome-fragment-copy-button.js" \
   "$ROOT_DIR/doxygen/awesome_doxygen/doxygen-awesome-paragraph-link.js" \
   "$ROOT_DIR/doxygen/awesome_doxygen/doxygen-awesome-nav-sync.js" \
+  "$ROOT_DIR/resources/search.html" \
   "$ROOT_DIR/resources/extra_style.css"
 do
   if [ ! -f "$f" ]; then
