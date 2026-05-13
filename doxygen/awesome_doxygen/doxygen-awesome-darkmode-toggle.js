@@ -77,10 +77,20 @@ class DoxygenAwesomeDarkModeToggle extends HTMLElement {
                 });
 
                 $(document).ready(function(){
-                    document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+                    const mount = document.getElementById("doc-theme-toggle")
+                    if (mount) {
+                        mount.appendChild(toggleButton)
+                    } else {
+                        document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+                    }
                 })
                 $(window).resize(function(){
-                    document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+                    const mount = document.getElementById("doc-theme-toggle")
+                    if (mount) {
+                        mount.appendChild(toggleButton)
+                    } else {
+                        document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+                    }
                 })
             })
         })

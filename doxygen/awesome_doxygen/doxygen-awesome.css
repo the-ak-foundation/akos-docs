@@ -354,7 +354,7 @@ a.anchor {
 
 #main-nav {
     flex-grow: 5;
-    padding: var(--spacing-small) var(--spacing-medium);
+    padding: var(--spacing-small) var(--spacing-large);
     border-bottom: 0;
 }
 

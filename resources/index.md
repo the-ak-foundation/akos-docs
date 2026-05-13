@@ -30,7 +30,6 @@ If you are new to AKOS, the fastest way to navigate the material is:
 - [Memory management](04_/index.md) - heap and allocation-related material
 - [Threads management](05_/index.md) - thread lifecycle and scheduling context
 - [Scheduler](06_/index.md) - scheduling rules and behavior
-- [Context switch](07_/index.md) - how execution moves between threads
 - [Timers management](08_/index.md) - timer-related APIs and concepts
 - [Inter-thread Synchronization](09_/index.md) - coordination primitives
 - [Inter-thread Communication](10_/index.md) - message passing and data exchange

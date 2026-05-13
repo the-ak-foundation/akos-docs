@@ -2,6 +2,10 @@
 :root {
     --ak-accent: #169451;
     --ak-accent-weak: rgba(14, 165, 164, 0.22);
+    --doc-search-bg: #ffffff;
+    --doc-search-fg: #1f2937;
+    --doc-search-muted: #909090;
+    --doc-search-border: var(--ak-accent);
     --primary-color: var(--ak-accent) !important;
     --primary-dark-color: #0f7b42 !important;
     --primary-light-color: #3ab977 !important;
@@ -14,6 +18,10 @@ html.dark-mode {
     --primary-light-color: #3ab977 !important;
     --link-color: var(--ak-accent) !important;
     --ak-accent-weak: rgba(14, 165, 164, 0.35);
+    --doc-search-bg: #23272f;
+    --doc-search-fg: #e5e7eb;
+    --doc-search-muted: #c3c8d0;
+    --doc-search-border: #34d399;
 }
 
 /* Native text selection */
@@ -32,6 +40,10 @@ html.dark-mode {
 #nav-tree .selected,
 #nav-tree .selected a {
     color: var(--ak-accent) !important;
+}
+
+#nav-tree .selected a {
+    font-weight: 500 !important;
 }
 
 #nav-tree .selected::after {
@@ -152,6 +164,195 @@ html.light-mode #projectlogo::before {
 .section_buttons .prev-link:hover {
     background: rgba(22, 148, 81, 0.28);
     transform: translateY(-1px);
+}
+
+/* Header search form that routes to the dedicated search page. */
+.doc-header-shell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 2px 0 2px;
+}
+
+.doc-header-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+#doc-menu-slot {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 4px 0 2px;
+}
+
+#doc-menu-slot .sm.sm-dox {
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 0 5px 0;
+}
+
+.doc-search-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 4px 0 2px;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.doc-search-row .doc-search-form {
+    margin: 0;
+    flex: 1 1 auto;
+    max-width: none;
+}
+
+.doc-search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0.1rem 0.32rem;
+    border: 1px solid var(--doc-search-border);
+    border-radius: 999px;
+    background: var(--doc-search-bg);
+}
+
+.doc-theme-toggle-slot {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+}
+
+.doc-search-input {
+    width: clamp(90px, 14vw, 180px);
+    min-width: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    color: var(--doc-search-fg);
+    font-size: 0.88rem;
+    padding: 0.12rem 0;
+}
+
+.doc-search-input::placeholder {
+    color: var(--doc-search-muted);
+    opacity: 1;
+}
+
+.doc-search-input::-webkit-search-cancel-button,
+.doc-search-input::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.doc-search-input::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.doc-search-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.doc-search-icon::before,
+.doc-search-icon::after {
+    content: "";
+    position: absolute;
+    border: 1.5px solid var(--doc-search-muted);
+    box-sizing: content-box;
+}
+
+@media screen and (min-width: 768px) {
+    #main-nav,
+    #doc-menu-slot {
+        display: none !important;
+    }
+}
+
+.doc-search-icon::before {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 4px;
+    left: 2px;
+    background: var(--doc-search-bg);
+}
+
+.doc-search-icon::after {
+    border: 1px solid var(--doc-search-muted);
+    width: 0;
+    height: 3px;
+    border-radius: 2px;
+    top: 12px;
+    left: 8px;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+}
+
+/* Hide Doxygen's built-in popup search widget on normal docs pages. */
+body:not(.search-page) #MSearchBox,
+body:not(.search-page) #MSearchSelectWindow,
+body:not(.search-page) #MSearchResultsWindow {
+    display: none !important;
+}
+
+@media (max-width: 900px) {
+    .doc-search-row {
+        padding: 4px 10px 2px;
+    }
+
+    .doc-search-form {
+        gap: 6px;
+        padding: 0.08rem 0.26rem;
+    }
+
+    .doc-search-input {
+        width: clamp(84px, 20vw, 150px);
+    }
+
+}
+
+@media (max-width: 700px) {
+    .doc-search-input {
+        width: clamp(80px, 26vw, 130px);
+    }
+
+    .doc-search-row {
+        padding: 3px 8px 2px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .doc-header-row {
+        flex-wrap: nowrap;
+    }
+
+    .doc-search-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 4px 10px 6px;
+    }
+
+    .doc-search-form {
+        min-width: 0;
+    }
 }
 
 /* Force section/page outline active links to AK green */

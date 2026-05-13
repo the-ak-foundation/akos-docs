@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "STM32L151 App Debug",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/akos/examples/00-blink/akos-00-blink.elf",
+      "gdbPath": "/usr/bin/gdb-multiarch",
+      "device": "STM32L151C8",
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "raw",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32l1.cfg"
+      ],
+    }
+  ]
+}

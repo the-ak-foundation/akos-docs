@@ -16,7 +16,6 @@
   <script type="text/javascript" src="$relpath^jquery.js"></script>
   <script type="text/javascript" src="$relpath^dynsections.js"></script>
   $treeview
-  $search
   $mathjax
   <link href="$relpath^$stylesheet" rel="stylesheet" type="text/css" />
   $extrastylesheet
@@ -63,14 +62,57 @@
             </td>
             <!--END PROJECT_BRIEF-->
             <!--END !PROJECT_NAME-->
-            <!--BEGIN DISABLE_INDEX-->
-            <!--BEGIN SEARCHENGINE-->
-            <td>$searchbox</td>
-            <!--END SEARCHENGINE-->
-            <!--END DISABLE_INDEX-->
           </tr>
         </tbody>
       </table>
+      <div class="doc-header-shell">
+        <div id="doc-menu-slot"></div>
+        <div class="doc-header-row">
+          <div class="doc-search-row">
+            <form class="doc-search-form" action="$relpath^search.html" method="get" role="search">
+              <span class="doc-search-icon" aria-hidden="true"></span>
+              <input
+                type="search"
+                name="query"
+                class="doc-search-input"
+                placeholder="Search docs"
+                aria-label="Search docs"
+              />
+            </form>
+            <div id="doc-theme-toggle" class="doc-theme-toggle-slot" aria-label="Toggle light and dark mode"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <!--END TITLEAREA-->
     <!-- end header part -->
+    <script type="text/javascript">
+      (function () {
+        function moveMenuIntoHeader() {
+          var menu = document.querySelector('.sm.sm-dox');
+          var slot = document.getElementById('doc-menu-slot');
+          if (menu && slot && menu.parentNode !== slot) {
+            slot.appendChild(menu);
+          }
+        }
+
+        window.addEventListener('DOMContentLoaded', moveMenuIntoHeader);
+        window.addEventListener('load', moveMenuIntoHeader);
+
+        var attempts = 0;
+        var interval = window.setInterval(function () {
+          moveMenuIntoHeader();
+          attempts += 1;
+          if (attempts > 40) {
+            window.clearInterval(interval);
+          }
+        }, 50);
+
+        var topNode = document.getElementById('top');
+        if (topNode && window.MutationObserver) {
+          var observer = new MutationObserver(moveMenuIntoHeader);
+          observer.observe(topNode, { childList: true, subtree: true });
+        }
+      })();
+    </script>
+    <div id="main-nav"></div>

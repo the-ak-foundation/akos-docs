@@ -113,7 +113,6 @@ INPUT                  = resources/index.md \
                          resources/04_/index.md \
                          resources/05_/index.md \
                          resources/06_/index.md \
-                         resources/07_/index.md \
                          resources/08_/index.md \
                          resources/09_/index.md \
                          resources/10_/index.md \
@@ -215,7 +214,7 @@ HTML_EXTRA_FILES       = doxygen/awesome_doxygen/doxygen-awesome-darkmode-toggle
                          doxygen/awesome_doxygen/doxygen-awesome-paragraph-link.js \
                          doxygen/awesome_doxygen/doxygen-awesome-interactive-toc.js \
                          doxygen/awesome_doxygen/doxygen-awesome-nav-sync.js \
-                         resources/downloads/stm32l151_fore_background.zip
+                         resources/search.html
 HTML_COPY_CLIPBOARD    = NO
 HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
 HTML_COLORSTYLE_HUE    = 220
