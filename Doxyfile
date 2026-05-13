@@ -109,11 +109,9 @@ WARN_LOGFILE           =
 INPUT                  = resources/index.md \
                          resources/01_/index.md \
                          resources/02_/index.md \
-                         resources/03_/index.md \
                          resources/04_/index.md \
                          resources/05_/index.md \
                          resources/06_/index.md \
-                         resources/07_/index.md \
                          resources/08_/index.md \
                          resources/09_/index.md \
                          resources/10_/index.md \
@@ -172,7 +170,10 @@ EXCLUDE                = akos/examples \
                          akos/README.md \
                          akos/port/arm/cortex-m3/core_cm3.h \
                          akos/port/arm/cortex-m3/core_cmFunc.h \
-                         akos/port/arm/cortex-m3/core_cmInstr.h
+                         akos/port/arm/cortex-m3/core_cmInstr.h \
+                         akos/port/arm/cortex-m0/core_cm0.h \
+                         akos/port/arm/cortex-m0/core_cmFunc.h \
+                         akos/port/arm/cortex-m0/core_cmInstr.h
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       =
 EXCLUDE_SYMBOLS        =
@@ -215,7 +216,7 @@ HTML_EXTRA_FILES       = doxygen/awesome_doxygen/doxygen-awesome-darkmode-toggle
                          doxygen/awesome_doxygen/doxygen-awesome-paragraph-link.js \
                          doxygen/awesome_doxygen/doxygen-awesome-interactive-toc.js \
                          doxygen/awesome_doxygen/doxygen-awesome-nav-sync.js \
-                         resources/downloads/stm32l151_fore_background.zip
+                         resources/search.html
 HTML_COPY_CLIPBOARD    = NO
 HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
 HTML_COLORSTYLE_HUE    = 220

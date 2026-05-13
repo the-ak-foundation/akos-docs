@@ -111,10 +111,9 @@ the AK Embedded Base Kit with the expected LED activity.
 
 Once the board boots and the application image flashes correctly, continue to:
 
-- [Kernel basics](../03_/index.md)
+- [Introduction](../01_/index.md)
 - [Threads management](../05_/index.md)
 - [Scheduler](../06_/index.md)
-- [Context switch](../07_/index.md)
 
 From there you can start turning the board's buttons, display, and buzzer into
 actual AKOS tasks and events.
