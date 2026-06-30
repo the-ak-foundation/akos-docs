@@ -1,3 +1,9 @@
+<div align="center">
+  
+![Repo Traffic](https://komarev.com/ghpvc/?username=akos-docs&label=Repo+Traffic&color=blue&style=flat-square)
+
+</div>
+
 # AKOS Documentation 
 
 Live Site: **https://the-ak-foundation.github.io/akos-docs**
