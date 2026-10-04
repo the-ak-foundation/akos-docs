@@ -1,6 +1,6 @@
 <div align="center">
   
-![Repo Traffic](https://komarev.com/ghpvc/?username=akos-docs&label=Repo+Traffic&color=blue&style=flat-square)
+![Repo Traffic](https://ak-badge-proxy.caotrongphuoc.workers.dev/?username=akos-docs&label=Repo+Traffic&color=blue&style=flat-square)
 
 </div>
 
